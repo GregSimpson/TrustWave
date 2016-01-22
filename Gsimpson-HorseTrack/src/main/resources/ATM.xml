@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bills>
+
+	<bill>
+		<denomination>$1</denomination>
+		<inventory>10</inventory>
+	</bill>
+
+	<bill>
+		<denomination>$5</denomination>
+		<inventory>10</inventory>
+	</bill>
+
+	<bill>
+		<denomination>$10</denomination>
+		<inventory>10</inventory>
+	</bill>
+
+	<bill>
+		<denomination>$20</denomination>
+		<inventory>10</inventory>
+	</bill>
+	<bill>
+		<denomination>$100</denomination>
+		<inventory>10</inventory>
+	</bill>
+</Bills>

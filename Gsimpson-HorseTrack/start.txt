@@ -1,0 +1,7 @@
+
+cd /cygdrive/c/gjs/edureka/java/workspace/Gsimpson-HorseTrack
+
+javac -d bin -sourcepath src  src/main/java/com/mvc/*/*.java
+
+java -cp bin com.mvc.controller.TrackController
+

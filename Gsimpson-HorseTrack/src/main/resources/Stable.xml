@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Horses>
+
+	<horse>
+		<number>1</number>
+		<name>That Darn Gray Cat</name>
+		<odds>5</odds>
+	</horse>
+	<horse>
+		<number>2</number>
+		<name>Fort Utopia</name>
+		<odds>10</odds>
+	</horse>
+	<horse>
+		<number>3</number>
+		<name>Count Sheep</name>
+		<odds>9</odds>
+	</horse>
+	<horse>
+		<number>4</number>
+		<name>Ms Traitour</name>
+		<odds>4</odds>
+	</horse>
+	<horse>
+		<number>5</number>
+		<name>Real Princess</name>
+		<odds>3</odds>
+	</horse>
+	<horse>
+		<number>6</number>
+		<name>Pa Kettle</name>
+		<odds>5</odds>
+	</horse>
+	<horse>
+		<number>7</number>
+		<name>Gin Stinger</name>
+		<odds>6</odds>
+	</horse>
+
+
+
+</Horses>
