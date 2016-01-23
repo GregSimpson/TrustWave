@@ -9,11 +9,11 @@ PATH=%JAVA_HOME%/bin
 
 
 # move to the dir in which you have the project
-cd /cygdrive/c/gjs/edureka/java/workspace/Gsimpson-HorseTrack
+cd /cygdrive/c/gjs/edureka/TrustWave/Gsimpson-HorseTrack
 
 # compile it
 javac -d bin -sourcepath src  src/main/java/com/mvc/*/*.java
 
 # launch it
-java -cp bin com.mvc.controller.TrackController
+java -cp bin com.mvc.controller.AppController
 
