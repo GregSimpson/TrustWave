@@ -1,0 +1,19 @@
+
+# here is how to compile and run this project
+#  I use cygwin on a windows machine
+#  I have included these 2 settings in my environment
+#
+
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_51
+PATH=%JAVA_HOME%/bin
+
+
+# move to the dir in which you have the project
+cd /cygdrive/c/gjs/edureka/java/workspace/Gsimpson-HorseTrack
+
+# compile it
+javac -d bin -sourcepath src  src/main/java/com/mvc/*/*.java
+
+# launch it
+java -cp bin com.mvc.controller.TrackController
+

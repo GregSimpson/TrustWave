@@ -1,5 +1,11 @@
 package com.mvc.model;
 
+/**
+ * @author gjsimpso 
+ * The Bet class. 
+ * 
+ */
+
 public class Bet implements Comparable {
 
 	private int horseNumber;
@@ -39,10 +45,7 @@ public class Bet implements Comparable {
 
 	@Override
 	public int compareTo(Object p_aThat) {
-		// http://www.javapractices.com/topic/TopicAction.do?Id=10
 
-		// TODO Auto-generated method stub
-		// return 0;
 		final int BEFORE = -1;
 		final int EQUAL = 0;
 		final int AFTER = 1;
@@ -62,5 +65,4 @@ public class Bet implements Comparable {
 
 		return EQUAL;
 	}
-
 }

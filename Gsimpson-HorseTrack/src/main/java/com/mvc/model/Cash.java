@@ -1,22 +1,16 @@
-/**
- * 
- */
+
 package com.mvc.model;
 
 /**
- * @author gjsimpso
- *
+ * @author gjsimpso The Cash class
  */
+
 public class Cash implements Comparable {
 
 	private String denomination;
 	private int inventory;
 
-	/**
-	 * 
-	 */
 	public Cash(String p_denomination, int p_inventory) {
-		// TODO Auto-generated constructor stub
 		this.denomination = p_denomination;
 		this.inventory = p_inventory;
 	}
@@ -41,6 +35,7 @@ public class Cash implements Comparable {
 		this.inventory = p_inventory;
 	}
 
+	// remove a subset of the total count of bills for this denomination
 	protected int subtractInventory(int p_numberOfBills) {
 		if (p_numberOfBills <= this.getInventory()) {
 			this.setInventory(this.getInventory() - p_numberOfBills);
@@ -48,6 +43,7 @@ public class Cash implements Comparable {
 		return this.getInventory();
 	}
 
+	// add a number of bills to the total count for this denomination
 	public void addInventory(int p_numberOfBills) {
 		this.setInventory(this.getInventory() + p_numberOfBills);
 	}
@@ -56,10 +52,12 @@ public class Cash implements Comparable {
 		return (this.getInventory() * this.getOneBillValue());
 	}
 
+	// get the value for this denomination
 	public int getOneBillValue() {
 		return new Integer(this.getDenomination().substring(1, getDenomination().length())).intValue();
 	}
 
+	// returns the value of a single bill
 	public int payOneBill() {
 		if (this.getInventory() > 0) {
 			this.subtractInventory(1);
@@ -71,10 +69,7 @@ public class Cash implements Comparable {
 
 	@Override
 	public int compareTo(Object p_aThat) {
-		// http://www.javapractices.com/topic/TopicAction.do?Id=10
 
-		// TODO Auto-generated method stub
-		// return 0;
 		final int BEFORE = -1;
 		final int EQUAL = 0;
 		final int AFTER = 1;
@@ -99,6 +94,5 @@ public class Cash implements Comparable {
 			return AFTER;
 
 		return EQUAL;
-
 	}
 }

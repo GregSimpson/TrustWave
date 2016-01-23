@@ -1,5 +1,10 @@
 package com.mvc.services;
 
+/**
+ * @author gjsimpso
+ * The Services provide the utilities that are used by the Controllers
+ */
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -24,10 +29,13 @@ public class StableServices {
 	}
 
 	public TreeSet<Horse> loadStable(TreeSet<Horse> p_stableSet) {
+
+		// remove any exiting elements in the set
 		p_stableSet.clear();
 
 		String stableFile = "./bin/Stable.xml";
 
+		// load the document above into a TreeSet
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder;
 		try {

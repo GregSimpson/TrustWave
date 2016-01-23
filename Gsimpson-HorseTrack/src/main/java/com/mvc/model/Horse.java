@@ -1,12 +1,10 @@
-/**
- * 
- */
+
 package com.mvc.model;
 
 /**
- * @author gjsimpso
- *
+ * @author gjsimpso The Horse class
  */
+
 public class Horse implements Comparable {
 
 	private int number;
@@ -14,11 +12,7 @@ public class Horse implements Comparable {
 	private int odds;
 	private String result;
 
-	/**
-	 * 
-	 */
 	public Horse(int p_number, String p_name, int p_odds) {
-		// TODO Auto-generated constructor stub
 		this.number = p_number;
 		this.name = p_name;
 		this.odds = p_odds;
@@ -66,10 +60,6 @@ public class Horse implements Comparable {
 
 	@Override
 	public int compareTo(Object p_aThat) {
-		// http://www.javapractices.com/topic/TopicAction.do?Id=10
-
-		// TODO Auto-generated method stub
-		// return 0;
 		final int BEFORE = -1;
 		final int EQUAL = 0;
 		final int AFTER = 1;

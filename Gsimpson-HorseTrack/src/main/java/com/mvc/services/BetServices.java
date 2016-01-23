@@ -1,5 +1,10 @@
 package com.mvc.services;
 
+/**
+ * @author gjsimpso
+ * The Services provide the utilities that are used by the Controllers
+ */
+
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -11,17 +16,16 @@ public class BetServices {
 
 	AtmServices atmSvcs = new AtmServices();
 	StableServices stableSvcs = new StableServices();
-	// BetServices betSvcs = new BetServices();
 
 	public BetServices() {
 		// TODO Auto-generated constructor stub
 	}
 
-	// public void placeBet(int p_horseNumber, String p_saveHorseName, int
-	// p_amount, TreeSet<Bet> p_betSet, TreeSet<Horse> p_stableSet) {
 	public void placeBet(int p_horseNumber, int p_amount, TreeSet<Bet> p_betSet, TreeSet<Horse> p_stableSet,
 			TreeSet<Cash> p_cashSet) {
 
+		// retrieve the winning horse, we need his name for the bet
+		// FOR loop version
 		Horse winner = null;
 		for (Horse node : p_stableSet) {
 			if (node.getNumber() == p_horseNumber) {
@@ -29,6 +33,7 @@ public class BetServices {
 			}
 		}
 
+		// set the attributes of the bet
 		Bet newBet = new Bet(winner.getNumber(), winner.getName(), p_amount);
 		if (p_betSet.contains(newBet)) {
 			p_betSet.remove(newBet);
@@ -39,10 +44,11 @@ public class BetServices {
 	}
 
 	public int showResults(TreeSet<Bet> p_betSet, TreeSet<Horse> p_stableSet, TreeSet<Cash> p_cashSet) {
-		// TODO Auto-generated method stub
 		Horse winningHorse = null;
 		int winningTotal = 0;
+
 		// iterate over the stable - find the winning horse number
+		//  WHILE loop version
 		Iterator<Horse> stableSetITR = p_stableSet.iterator();
 		while (stableSetITR.hasNext()) {
 			Horse stableElem = stableSetITR.next();
@@ -54,12 +60,17 @@ public class BetServices {
 		Bet betToRemove = null;
 		if (winningHorse != null) {
 
+			// iterate over the bets - see if any bets match the winner
 			Iterator<Bet> betSetITR = p_betSet.iterator();
 			while (betSetITR.hasNext()) {
 				Bet betElem = betSetITR.next();
+
 				if (betElem.getHorseNumber() == winningHorse.getNumber()) {
+					// there is a matching bet
 					winningTotal = (betElem.getAmount() * winningHorse.getOdds());
 					System.out.println("Payout: " + winningHorse.getName() + ",$" + winningTotal);
+					// we only pay the winners one time, but we cannot remove them 
+					//  from inside the iterator
 					betToRemove = betElem;
 					// pay the winning amount
 					if (winningTotal > 0) {
@@ -70,6 +81,7 @@ public class BetServices {
 				}
 			}
 		}
+		// here we actually remove the paid bet
 		if ((betToRemove != null) && (p_betSet.contains(betToRemove))) {
 			p_betSet.remove(betToRemove);
 		}

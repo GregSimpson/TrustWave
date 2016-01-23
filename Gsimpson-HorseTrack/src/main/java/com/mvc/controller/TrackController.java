@@ -1,5 +1,12 @@
 package com.mvc.controller;
 
+/**
+ * @author gjsimpso
+ *  This is the main functional class of the project.
+ *  It handles the user input and manages the functionality
+ *  
+ */
+
 import java.util.Scanner;
 import java.util.TreeSet;
 
@@ -24,8 +31,6 @@ public class TrackController {
 	}
 
 	public void trackATM() {
-		// TODO Auto-generated method stub
-
 		AtmServices atmSvcs = new AtmServices();
 		atmSvcs.loadWallet(cashSet);
 		// atmSvcs.showWallet(cashSet);
@@ -44,15 +49,14 @@ public class TrackController {
 
 			choice = sc.nextLine();
 
-			String[] gjs = choice.split(" ");
-			String part1 = gjs[0];
+			String[] inputCharArray = choice.split(" ");
+			String part1 = inputCharArray[0];
 
 			if (part1.matches("\\d+$")) {
-				// System.out.println("\n:" + part1 + ": is a digit");
 
-				if (gjs.length > 1) {
+				if (inputCharArray.length > 1) {
 					try {
-						int part2 = new Integer(gjs[1]).intValue();
+						int part2 = new Integer(inputCharArray[1]).intValue();
 						Integer inputInt = new Integer(part1);
 						switch (inputInt) {
 						case 1:
@@ -70,7 +74,7 @@ public class TrackController {
 						}
 						}
 					} catch (NumberFormatException e) {
-						System.out.println("Invalid Bet: " + gjs[1]);
+						System.out.println("Invalid Bet: " + inputCharArray[1]);
 					}
 				} else {
 					// System.out.println("you did not provide a bet amount");
@@ -85,16 +89,19 @@ public class TrackController {
 				}
 				case "R":
 				case "r": {
+					//reload the ATM
 					atmSvcs.loadWallet(cashSet);
+					//reload the stable
 					stableSvcs.loadStable(stableSet);
+					// remove all existing bets
 					betSet.clear();
 					break;
 				}
 				case "W":
 				case "w": {
 
-					if (gjs.length > 1) {
-						String part2 = gjs[1];
+					if (inputCharArray.length > 1) {
+						String part2 = inputCharArray[1];
 
 						try {
 							Integer inputInt2 = new Integer(part2);
