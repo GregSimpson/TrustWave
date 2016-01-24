@@ -130,6 +130,18 @@ public class AtmServices {
 			if (runningTotal == cost) {
 				System.out.println("Dispensing:");
 
+				// add denominations of 0 counts to l_proposedPayout
+				//reuse the previous iterator
+				cashSetITR = p_cashSet.descendingIterator();
+				while (cashSetITR.hasNext()) {
+					Cash cashElem = cashSetITR.next();					
+					billNumber = 0;
+					if (!l_proposedPayout.contains(cashElem)){
+						l_proposedPayout.add(new Cash(cashElem.getDenomination(), billNumber));
+					}
+				}				
+				
+				// list the payout amounts
 				Iterator<Cash> payoutITR = l_proposedPayout.iterator();
 				while (payoutITR.hasNext()) {
 					Cash payoutElem = payoutITR.next();
@@ -157,7 +169,7 @@ public class AtmServices {
 				}
 			}
 		} else {
-			System.out.println("Cannot dispense more than : " + this.getWalletTotal(p_cashSet));
+			System.out.println("Insufficient Funds: " + this.getWalletTotal(p_cashSet));
 		}
 	}
 }

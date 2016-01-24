@@ -69,8 +69,8 @@ public class TrackController {
 							betSvcs.placeBet(new Integer(part1).intValue(), part2, betSet, stableSet, cashSet);
 							break;
 						}
-						default: {
-							System.out.println("Invalid Bet: " + part1);
+						default: {							
+							System.out.println("Invalid Horse number: " + part1);
 						}
 						}
 					} catch (NumberFormatException e) {
@@ -142,7 +142,7 @@ public class TrackController {
 					break;
 				}
 				default:
-					System.out.println("Invalid char input" + part1);
+					System.out.println("Invalid Command: " + part1);
 				}
 			}
 		}
