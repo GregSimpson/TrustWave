@@ -126,7 +126,7 @@ public class TrackController {
 									}
 								}
 
-								// check the bets for a winner
+								// check the bets for a winner 
 								int payoutAmount = betSvcs.showResults(betSet, stableSet, cashSet);
 
 								break;

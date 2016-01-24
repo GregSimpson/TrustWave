@@ -131,7 +131,7 @@ public class AtmServices {
 				System.out.println("Dispensing:");
 
 				// add denominations of 0 counts to l_proposedPayout
-				//reuse the previous iterator
+				//reuse the previous iterator  
 				cashSetITR = p_cashSet.descendingIterator();
 				while (cashSetITR.hasNext()) {
 					Cash cashElem = cashSetITR.next();					
